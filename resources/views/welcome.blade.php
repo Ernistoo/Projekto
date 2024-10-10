@@ -20,13 +20,12 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background-color: #e0e0e0;
+            background: linear-gradient(135deg, #74ebd5, #ACB6E5);
             color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            /* Take full screen height */
             padding: 0;
             margin: 0;
             flex-direction: column;
@@ -38,13 +37,13 @@
             padding: 20px;
             display: flex;
             justify-content: space-between;
-            background-color: #333;
+            background-color: #222;
             color: white;
             position: fixed;
             top: 0;
             left: 0;
             z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .navbar a {
@@ -57,36 +56,35 @@
         }
 
         .navbar a:hover {
-            color: #ccc;
+            color: #ffeb3b;
         }
 
-        .logo {
-            height: 100%;
-            width: 100%;
+        .logo img {
+            height: 40px;
+            width: auto;
         }
 
         /* Center content with margin for the navbar */
         .container {
             text-align: center;
             background-color: #fff;
-            padding: 50px;
-            border-radius: 10px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            max-width: 900px;
-            margin-top: 80px;
-            /* Extra margin to account for the navbar height */
+            padding: 60px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
+            margin-top: 120px;
         }
 
         h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            color: #333;
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #222;
         }
 
         p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             margin-bottom: 30px;
-            color: #666;
+            color: #555;
         }
 
         .cta-buttons {
@@ -95,18 +93,21 @@
 
         .cta-buttons a {
             display: inline-block;
-            margin: 0 10px;
-            padding: 15px 30px;
-            background-color: #333;
+            margin: 0 15px;
+            padding: 15px 35px;
+            background-color: #222;
             color: #fff;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 30px;
             font-size: 1rem;
-            transition: background-color 0.3s;
+            font-weight: 500;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .cta-buttons a:hover {
-            background-color: #555;
+            background-color: #333;
+            transform: translateY(-5px);
         }
 
         .cta-buttons a.dashboard {
@@ -122,6 +123,10 @@
             text-align: center;
             color: #666;
         }
+
+        footer p {
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 
@@ -130,7 +135,7 @@
     <!-- Full-width Navbar -->
     <div class="navbar">
         <div class="logo">
-            <img src="{{ asset('public/yeah.svg') }}" alt="Logo">
+            <img src="{{ asset('public/images/yeah.svg') }}" alt="Logo">
         </div>
         <div>
             @auth
@@ -147,7 +152,6 @@
     <!-- Main Content Container -->
     <div class="container">
         <h1>Welcome to the Interactive Myth Map</h1>
-
 
         <div class="cta-buttons">
             @auth
